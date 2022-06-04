@@ -2,7 +2,10 @@
 
 import speech_recognition as sr
 
+print("Poke no anda?")
+
 r = sr.Recognizer()
+
 
 with sr.Microphone() as source:
     print('Speak Anything : ')
@@ -13,3 +16,7 @@ with sr.Microphone() as source:
         print('You said : {}'.format(text))
     except:
         print('Sorry could not recognize your voice')
+
+
+
+
