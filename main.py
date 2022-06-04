@@ -18,6 +18,7 @@ engine.setProperty('voice', voices[1].id)
 
 
 def talk(text):
+    print(text)
     engine.say(text)
     engine.runAndWait()
 
@@ -45,10 +46,9 @@ def run_alexa():
     elif 'time' in command:
         time = datetime.datetime.now().strftime('%I:%M %p')
         talk('Current time is ' + time)
-    elif 'who the heck is' in command:
-        person = command.replace('who the heck is', '')
+    elif 'who is' in command:
+        person = command.replace('who is', '')
         info = wikipedia.summary(person, 1)
-        print(info)
         talk(info)
     elif 'date' in command:
         talk('sorry, I have a headache')
@@ -56,7 +56,6 @@ def run_alexa():
         talk('I am in a relationship with wifi')
     elif 'joke' in command:
         joke = pyjokes.get_joke()
-        print(joke)
         talk(joke)
     else:
         talk('Please say the command again.')
